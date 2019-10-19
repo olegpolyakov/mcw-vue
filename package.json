@@ -1,0 +1,49 @@
+{
+  "name": "mcw-vue",
+  "version": "0.1.0",
+  "description": "Material Components for the web implemented in Vue",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack --watch --env.dev --mode=development",
+    "start server": "webpack-dev-server --history-api-fallback --open",
+    "build": "webpack --env.prod --mode=production",
+    "prepublish": "npm run build"
+  },
+  "dependencies": {
+    "material-components-web": "^3.2.0",
+    "vue": "^2.6.10"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "autoprefixer": "^9.6.1",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.2.0",
+    "mini-css-extract-plugin": "^0.8.0",
+    "node-sass": "^4.12.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.3.1",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "vue-loader": "^15.7.1",
+    "vue-style-loader": "^4.1.2",
+    "vue-template-compiler": "^2.6.10",
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.7"
+  },
+  "author": {
+    "name": "Oleg Polyakov",
+    "email": "olegpolyakov@outlook.com"
+  },
+  "license": "MIT",
+  "keywords": [
+    "mdc",
+    "mcw",
+    "vue",
+    "material",
+    "design",
+    "components",
+    "web",
+    "ui"
+  ]
+}
