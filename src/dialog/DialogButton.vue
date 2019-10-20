@@ -5,13 +5,8 @@ export default {
     name: 'MDCDialogButton',
 
     props: {
-        label: {
-            type: String
-        },
-
-        action: {
-            type: String
-        }
+        label: String,
+        action: String
     }
 }
 </script>
