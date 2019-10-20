@@ -1,5 +1,5 @@
 import Button from './button';
-import { Card, CardHeader } from './card';
+import { Card, CardActions, CardButton, CardHeader, CardMedia, CardSection } from './card';
 import Checkbox from './checkbox';
 import { Dialog, DialogButton } from './dialog';
 import { Drawer, DrawerContent, DrawerHeader } from './drawer';
@@ -15,8 +15,12 @@ import Typography from './typography';
 export function install(Vue, options) {
     Vue.component('mdc-button', Button);
     Vue.component('mdc-card', Card);
-    Vue.component('mdc-checkbox', Checkbox);
+    Vue.component('mdc-card-actions', CardActions);
+    Vue.component('mdc-card-button', CardButton);
     Vue.component('mdc-card-header', CardHeader);
+    Vue.component('mdc-card-media', CardMedia);
+    Vue.component('mdc-card-section', CardSection);
+    Vue.component('mdc-checkbox', Checkbox);
     Vue.component('mdc-dialog', Dialog);
     Vue.component('mdc-dialog-button', DialogButton);
     Vue.component('mdc-drawer', Drawer);

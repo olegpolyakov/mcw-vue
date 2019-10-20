@@ -1,9 +1,9 @@
 <template>
     <div class="mdc-card__header">
         <div class="mdc-card__header__text">
-            <h2 class="mdc-card__header__title">{{ title }}</h2>
+            <h2 v-if="title" class="mdc-card__header__title">{{ title }}</h2>
 
-            <h3 class="mdc-card__header__subtitle">{{ subtitle }}</h3>
+            <h3 v-if="subtitle" class="mdc-card__header__subtitle">{{ subtitle }}</h3>
 
             <slot />
         </div>

@@ -1,23 +1,10 @@
-<template>
-    <div class="mdc-card__section">
-        <slot />
-    </div>
-</template>
-
 <script>
 export default {
     name: 'MDCCardSection',
 
     props: {
-        primary: {
-            type: Boolean,
-            default: false
-        },
-        
-        secondary: {
-            type: Boolean,
-            default: false
-        }
+        primary: Boolean,
+        secondary: Boolean
     },
 
     computed: {
@@ -30,6 +17,12 @@ export default {
     }
 }
 </script>
+
+<template>
+    <div class="mdc-card__section" :class="classes">
+        <slot />
+    </div>
+</template>
 
 <style lang="scss">
 .mdc-card {
