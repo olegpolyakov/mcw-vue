@@ -7,19 +7,38 @@ export default {
     inheritAttrs: false,
 
     model: {
-        prop: 'checked',
+        prop: 'selected',
         event: 'change'
     },
 
     props: {
-        checked: {
-            type: Boolean,
-            default: false
+        name: {
+            type: String,
+            required: true
         },
+        value: {
+            type: String,
+            required: true
+        },
+        disabled: Boolean,
+        selected: String
+    },
 
-        disabled: {
-            type: Boolean,
-            default: false
+    computed: {
+        checked() {
+            let checked = this.value === this.selected;
+
+            if (this.mdcRadio) {
+                this.mdcRadio.checked = checked;
+            }
+
+            return checked;
+        }
+    },
+
+    watch: {
+        disabled(value) {
+            this.mdcRadio.disabled = value;
         }
     },
 
@@ -33,13 +52,9 @@ export default {
         this.mdcRadio.destroy();
     },
 
-    watch: {
-        checked(value) {
-            this.mdcRadio.checked = value;
-        },
-
-        disabled(value) {
-            this.mdcRadio.disabled = value;
+    methods: {
+        onChange(event) {
+            this.$emit('change', event.target.value);
         }
     }
 }
@@ -51,9 +66,11 @@ export default {
             ref="input"
             type="radio"
             class="mdc-radio__native-control"
+            :name="name"
+            :value="value"
             :checked="checked"
             :disabled="disabled"
-            @change="$emit('change', $event.target.value)"
+            @change="onChange"
             v-bind="$attrs"
         >
 
