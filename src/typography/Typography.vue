@@ -26,6 +26,7 @@ export default {
         :is="tag"
         class="mdc-typography"
         :class="classes"
+        v-on="$listeners"
     >
         <slot />
     </component>

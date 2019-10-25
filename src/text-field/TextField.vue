@@ -43,6 +43,11 @@ export default {
             return {
                 'mdc-floating-label--float-above': this.value
             };
+        },
+
+        listeners() {
+            delete this.$listeners['input'];
+            return this.$listeners;
         }
     }
 }
@@ -53,7 +58,7 @@ export default {
         <i v-if="leadingIcon" class="material-icons mdc-text-field__icon" tabindex="0" role="button">{{ leadingIcon }}</i>
 
         <textarea v-if="textarea" class="mdc-text-field__input" rows="8" cols="40" :disabled="disabled" v-bind="$attrs"></textarea>
-        <input v-else class="mdc-text-field__input" :value="value" :disabled="disabled"  @input="$emit('input', $event.target.value)" v-bind="$attrs">
+        <input v-else class="mdc-text-field__input" :value="value" :disabled="disabled" @input="$emit('input', $event.target.value, $event)" v-bind="$attrs" v-on="listeners">
 
         <label v-if="label && !outlined" class="mdc-floating-label" :class="labelClasses">{{ label }}</label>
 

@@ -1,15 +1,3 @@
-<template>
-    <div class="mdc-avatar" v-bind="$attrs" v-on="$listeners">
-        <img v-if="src" :src="src" className="mdc-avatar__image" />
-
-        <i v-else-if="icon" :src="src" className="mdc-avatar__icon" />
-
-        <span v-else className="mdc-avatar__text">
-            <slot />
-        </span>
-    </div>
-</template>
-
 <script>
 export default {
     name: 'MDCAvatar',
@@ -38,6 +26,18 @@ export default {
     }
 }
 </script>
+
+<template>
+    <div class="mdc-avatar" v-on="$listeners">
+        <img v-if="src" :src="src" className="mdc-avatar__image" />
+
+        <i v-else-if="icon" :src="src" className="mdc-avatar__icon" />
+
+        <span v-else className="mdc-avatar__text">
+            <slot />
+        </span>
+    </div>
+</template>
 
 <style lang="scss">
 $mdc-avatar-size: 40px;

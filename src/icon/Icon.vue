@@ -1,26 +1,12 @@
-<template>
-    <i class="mdc-icon material-icons" :class="classes" v-on="$listeners"></i>
-</template>
-
 <script>
 export default {
     name: 'MDCIcon',
 
     props: {
         size: String,
-        
-        dark: {
-            type: Boolean,
-            default: false
-        },
-        light: {
-            type: Boolean,
-            default: false
-        },
-        inactive: {
-            type: Boolean,
-            default: false
-        }
+        dark: Boolean,
+        light: Boolean,
+        inactive: Boolean
     },
 
     computed: {
@@ -35,6 +21,10 @@ export default {
     }
 }
 </script>
+
+<template>
+    <i class="mdc-icon material-icons" :class="classes" v-on="$listeners"></i>
+</template>
 
 <style lang="scss">
 $icon-dark-color: rgba(0, 0, 0, 0.54);

@@ -5,13 +5,12 @@ export default {
     name: 'MDCDialog',
 
     props: {
-        title: {
-            type: String
-        },
+        title: String,
+        open: Boolean,
 
-        open: {
-            type: Boolean,
-            default: false
+        tag: {
+            type: String,
+            default: 'div'
         }
     },
 
@@ -50,7 +49,7 @@ export default {
 </script>
 
 <template>
-    <div ref="root" class="mdc-dialog" role="alertdialog" aria-modal="true">
+    <component :is="tag" ref="root" class="mdc-dialog" role="alertdialog" aria-modal="true" v-on="$listeners">
         <div class="mdc-dialog__container">
             <div class="mdc-dialog__surface">
                 <h2 v-if="title" class="mdc-dialog__title">{{ title }}</h2>
@@ -66,5 +65,5 @@ export default {
         </div>
 
         <div class="mdc-dialog__scrim"></div>
-    </div>
+    </component>
 </template>

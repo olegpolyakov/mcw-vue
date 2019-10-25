@@ -1,5 +1,21 @@
+<script>
+export default {
+    name: 'MDCCardHeader',
+
+    props: {
+        title: String,
+        subtitle: String,
+
+        tag: {
+            type: String,
+            default: 'div'
+        }
+    }
+}
+</script>
+
 <template>
-    <div class="mdc-card__header">
+    <component :is="tag" class="mdc-card__header" v-on="$listeners">
         <div class="mdc-card__header__text">
             <h2 v-if="title" class="mdc-card__header__title">{{ title }}</h2>
 
@@ -7,19 +23,8 @@
 
             <slot />
         </div>
-    </div>
+    </component>
 </template>
-
-<script>
-export default {
-    name: 'MDCCardHeader',
-
-    props: {
-        title: String,
-        subtitle: String
-    }
-}
-</script>
 
 <style lang="scss">
 @import '@material/theme/mixins';

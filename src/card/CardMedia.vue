@@ -5,7 +5,12 @@ export default {
     props: {
         src: String,
         wide: Boolean,
-        square: Boolean
+        square: Boolean,
+
+        tag: {
+            type: String,
+            default: 'div'
+        }
     },
 
     computed: {
@@ -26,9 +31,9 @@ export default {
 </script>
 
 <template>
-    <div class="mdc-card__media" :class="classes" :style="style">
+    <component :is="tag" class="mdc-card__media" :class="classes" :style="style" v-on="$listeners">
         <div v-if="$slots.default" class="mdc-card__media-content">
             <slog />
         </div>
-    </div>
+    </component>
 </template>

@@ -44,6 +44,11 @@ export default {
             return {
                 'mdc-checkbox--indeterminate': this.indeterminate,
             };
+        },
+
+        listeners() {
+            delete this.$listeners['change'];
+            return this.$listeners;
         }
     },
 
@@ -71,8 +76,9 @@ export default {
             class="mdc-checkbox__native-control"
             :disabled="disabled"
             :checked="checked"
-            @change="$emit('change', $event.target.checked)"
+            @change="$emit('change', $event.target.checked, $event)"
             v-bind="$attrs"
+            v-on="listeners"
         >
 
         <div class="mdc-checkbox__background">

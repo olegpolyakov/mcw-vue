@@ -53,9 +53,9 @@ export default {
 <template>
     <component
         :is="tag"
+        ref="root"
         class="mdc-tab"
         :class="rootClasses"
-        ref="root"
         role="tab"
         :aria-selected="active"
         :tabindex="active ? '0' : '-1'"

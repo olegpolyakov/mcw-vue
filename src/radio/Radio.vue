@@ -20,26 +20,9 @@ export default {
             type: String,
             required: true
         },
+        
         disabled: Boolean,
         selected: String
-    },
-
-    computed: {
-        checked() {
-            let checked = this.value === this.selected;
-
-            if (this.mdcRadio) {
-                this.mdcRadio.checked = checked;
-            }
-
-            return checked;
-        }
-    },
-
-    watch: {
-        disabled(value) {
-            this.mdcRadio.disabled = value;
-        }
     },
 
     mounted() {
@@ -52,9 +35,26 @@ export default {
         this.mdcRadio.destroy();
     },
 
-    methods: {
-        onChange(event) {
-            this.$emit('change', event.target.value);
+    computed: {
+        checked() {
+            let checked = this.value === this.selected;
+
+            if (this.mdcRadio) {
+                this.mdcRadio.checked = checked;
+            }
+
+            return checked;
+        },
+
+        listeners() {
+            delete this.$listeners['change'];
+            return this.$listeners;
+        }
+    },
+
+    watch: {
+        disabled(value) {
+            this.mdcRadio.disabled = value;
         }
     }
 }
@@ -70,8 +70,9 @@ export default {
             :value="value"
             :checked="checked"
             :disabled="disabled"
-            @change="onChange"
+            @change="$emit('change', $event.target.value, $event)"
             v-bind="$attrs"
+            v-on="listeners"
         >
 
         <div class="mdc-radio__background">

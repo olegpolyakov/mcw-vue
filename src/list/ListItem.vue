@@ -15,6 +15,7 @@ export default {
             type: String,
             default: 'li'
         },
+        
         ripple: {
             type: Boolean,
             default: true
@@ -36,9 +37,9 @@ export default {
 <template>
     <component
         :is="tag"
+        ref="root"
         class="mdc-list-item"
         :class="classes"
-        ref="root"
         v-on="$listeners"
     >
         <slot />

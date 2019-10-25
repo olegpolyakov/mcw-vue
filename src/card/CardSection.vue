@@ -4,7 +4,12 @@ export default {
 
     props: {
         primary: Boolean,
-        secondary: Boolean
+        secondary: Boolean,
+
+        tag: {
+            type: String,
+            default: 'div'
+        }
     },
 
     computed: {
@@ -19,9 +24,9 @@ export default {
 </script>
 
 <template>
-    <div class="mdc-card__section" :class="classes">
+    <component :is="tag" class="mdc-card__section" :class="classes" v-on="$listeners">
         <slot />
-    </div>
+    </component>
 </template>
 
 <style lang="scss">

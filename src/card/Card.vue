@@ -1,18 +1,14 @@
-<template>
-    <div class="mdc-card" :class="classes" v-bind="$attrs" v-on="$listeners">
-        <slot />
-    </div>
-</template>
-
 <script>
 export default {
     name: 'MDCCard',
 
     props: {
-        outlined: {
-            type: Boolean,
-            default: false
-        }
+        outlined: Boolean,
+
+        tag: {
+            type: String,
+            default: 'div'
+        },
     },
 
     computed: {
@@ -24,3 +20,9 @@ export default {
     }
 }
 </script>
+
+<template>
+    <component :is="tag" class="mdc-card" :class="classes" v-on="$listeners">
+        <slot />
+    </component>
+</template>

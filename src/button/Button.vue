@@ -42,9 +42,9 @@ export default {
 <template>
     <component
         :is="tag"
+        ref="root"
         class="mdc-button"
         :class="classes"
-        ref="root"
         v-on="$listeners"
     >
         <i v-if="icon || leadingIcon" class="material-icons mdc-button__icon" aria-hidden="true">{{ icon || leadingIcon }}</i>

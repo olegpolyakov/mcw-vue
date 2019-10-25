@@ -12,7 +12,7 @@ export default {
 </script>
 
 <template>
-    <component :is="tag" class="mdc-drawer__content">
+    <component :is="tag" class="mdc-drawer__content" v-on="$listeners">
         <slot />
     </component>
 </template>

@@ -48,9 +48,9 @@ export default {
 <template>
     <component
         :is="tag"
+        ref="root"
         class="mdc-list"
         :class="classes"
-        ref="root"
         v-on="$listeners"
     >
         <slot />

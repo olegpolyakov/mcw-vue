@@ -3,7 +3,12 @@ export default {
     name: 'MDCCardActions',
 
     props: {
-        fullBleed: Boolean
+        fullBleed: Boolean,
+
+        tag: {
+            type: String,
+            default: 'div'
+        }
     },
 
     computed: {
@@ -17,7 +22,7 @@ export default {
 </script>
 
 <template>
-    <div class="mdc-card__actions" :class="classes">
+    <component :is="tag" class="mdc-card__actions" :class="classes" v-on="$listeners">
         <div v-if="$slots.buttons" class="mdc-card__action-buttons">
             <slot name="buttons" />
         </div>
@@ -27,5 +32,5 @@ export default {
         </div>
 
         <slot />
-    </div>
+    </component>
 </template>

@@ -20,7 +20,6 @@ export default {
     <component
         :is="tag"
         class="mdc-list-item__text"
-        ref="root"
         v-on="$listeners"
     >
         <span v-if="primary" class="mdc-list-item__primary-text">{{ primary }}</span>

@@ -28,9 +28,9 @@ export default {
 <template>
     <component
         :is="tag"
+        ref="root"
         class="mdc-drawer"
         :class="classes"
-        ref="root"
         v-on="$listeners"
     >
         <slot />

@@ -3,10 +3,7 @@ export default {
     name: 'MDCSpinner',
 
     props: {
-        colorful: {
-            type: Boolean,
-            default: false
-        }
+        colorful: Boolean
     },
 
     computed: {

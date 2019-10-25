@@ -15,7 +15,6 @@ export default {
     <component
         :is="tag"
         class="mdc-list-item__graphic"
-        ref="root"
         v-on="$listeners"
     >
         <slot />
