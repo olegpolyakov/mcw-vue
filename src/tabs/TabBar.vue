@@ -5,7 +5,7 @@ export default {
     name: 'MDCTabBar',
 
     props: {
-        activeTab: String,
+        activeTab: [Number, String],
         minWidth: Boolean,
         stacked: Boolean,
         focusOnActivate: Boolean,
