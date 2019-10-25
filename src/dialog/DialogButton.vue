@@ -19,6 +19,6 @@ export default {
         v-bind="$attrs"
         v-on="$listeners"
     >
-        <slog />
+        <slot />
     </mdc-button>
 </template>
