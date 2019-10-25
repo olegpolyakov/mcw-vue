@@ -12,9 +12,13 @@ export default {
 </script>
 
 <template>
-    <button type="button" class="mdc-button mdc-dialog__button" :data-mdc-dialog-action="action">
-        <span class="mdc-button__label">
-            <slot>{{ label }}</slot>
-        </span>
-    </button>
+    <mdc-button
+        type="button"
+        class="mdc-dialog__button"
+        :data-mdc-dialog-action="action"
+        v-bind="$attrs"
+        v-on="$listeners"
+    >
+        <slog />
+    </mdc-button>
 </template>
