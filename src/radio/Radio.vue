@@ -81,3 +81,7 @@ export default {
         </div>
     </div>
 </template>
+
+<style lang="scss">
+@import '@material/radio/mdc-radio.scss';
+</style>

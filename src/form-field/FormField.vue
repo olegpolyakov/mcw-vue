@@ -38,3 +38,7 @@ export default {
         <label>{{ label }}</label>
     </div>
 </template>
+
+<style lang="scss">
+@import '@material/form-field/mdc-form-field.scss';
+</style>

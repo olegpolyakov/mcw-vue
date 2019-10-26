@@ -56,3 +56,8 @@ export default {
         <i v-if="trailingIcon" class="material-icons mdc-button__icon" aria-hidden="true">{{ trailingIcon }}</i>
     </component>
 </template>
+
+<style lang="scss">
+@import '@material/ripple/mdc-ripple.scss';
+@import '@material/button/mdc-button.scss';
+</style>

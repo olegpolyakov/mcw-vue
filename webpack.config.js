@@ -6,7 +6,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 
-module.exports = prod => {
+module.exports = env => {
     return ({
         entry: './src/index.js',
     
@@ -37,7 +37,7 @@ module.exports = prod => {
                     test: /\.scss$/,
                     use: [
                         {
-                            loader: prod ? CssExtractPlugin.loader : 'vue-style-loader'
+                            loader: env.prod ? CssExtractPlugin.loader : 'vue-style-loader'
                         },
                         {
                             loader: 'css-loader'

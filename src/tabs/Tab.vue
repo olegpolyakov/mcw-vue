@@ -77,3 +77,8 @@ export default {
         <span class="mdc-tab__ripple"></span>
     </component>
 </template>
+
+<style lang="scss">
+@import '@material/tab/mdc-tab.scss';
+@import '@material/tab-indicator/mdc-tab-indicator.scss';
+</style>

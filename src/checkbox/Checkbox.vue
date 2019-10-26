@@ -90,3 +90,7 @@ export default {
         </div>
     </div>
 </template>
+
+<style lang="scss">
+@import '@material/checkbox/mdc-checkbox.scss';
+</style>

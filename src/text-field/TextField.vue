@@ -76,3 +76,7 @@ export default {
         <div v-else class="mdc-line-ripple"></div>
     </div>
 </template>
+
+<style lang="scss">
+@import '@material/textfield/mdc-text-field.scss';
+</style>

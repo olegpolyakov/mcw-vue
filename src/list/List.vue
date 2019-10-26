@@ -56,3 +56,7 @@ export default {
         <slot />
     </component>
 </template>
+
+<style lang="scss">
+@import '@material/list/mdc-list.scss';
+</style>

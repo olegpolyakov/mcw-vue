@@ -31,3 +31,7 @@ export default {
         <slot />
     </component>
 </template>
+
+<style lang="scss">
+@import '@material/typography/mdc-typography.scss';
+</style>

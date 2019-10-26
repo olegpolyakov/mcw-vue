@@ -67,3 +67,7 @@ export default {
         <div class="mdc-dialog__scrim"></div>
     </component>
 </template>
+
+<style lang="scss">
+@import '@material/dialog/mdc-dialog.scss';
+</style>

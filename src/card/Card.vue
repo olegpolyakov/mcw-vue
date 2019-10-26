@@ -26,3 +26,7 @@ export default {
         <slot />
     </component>
 </template>
+
+<style lang="scss">
+@import '@material/card/mdc-card.scss';
+</style>

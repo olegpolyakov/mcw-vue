@@ -72,3 +72,8 @@ export default {
         </div>
     </div>
 </template>
+
+<style lang="scss">
+@import '@material/tab-bar/mdc-tab-bar.scss';
+@import '@material/tab-scroller/mdc-tab-scroller.scss';
+</style>
