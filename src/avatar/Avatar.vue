@@ -4,16 +4,8 @@ export default {
 
     props: {
         src: String,
-
-        small: {
-            type: Boolean,
-            default: false
-        },
-
-        large: {
-            type: Boolean,
-            default: false
-        }
+        small: Boolean,
+        large: Boolean
     },
 
     computed: {
@@ -29,11 +21,11 @@ export default {
 
 <template>
     <div class="mdc-avatar" v-on="$listeners">
-        <img v-if="src" :src="src" className="mdc-avatar__image" />
+        <img v-if="src" :src="src" class="mdc-avatar__image" />
 
-        <i v-else-if="icon" :src="src" className="mdc-avatar__icon" />
+        <i v-else-if="icon" :src="src" class="mdc-avatar__icon" />
 
-        <span v-else className="mdc-avatar__text">
+        <span v-else class="mdc-avatar__text">
             <slot />
         </span>
     </div>

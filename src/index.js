@@ -1,3 +1,4 @@
+import Avatar from './avatar';
 import Button from './button';
 import { Card, CardActions, CardButton, CardHeader, CardMedia, CardSection } from './card';
 import Checkbox from './checkbox';
@@ -13,6 +14,7 @@ import TextField from './text-field';
 import Typography from './typography';
 
 export function install(Vue, options) {
+    Vue.component('mdc-avatar', Avatar);
     Vue.component('mdc-button', Button);
     Vue.component('mdc-card', Card);
     Vue.component('mdc-card-actions', CardActions);
@@ -42,6 +44,7 @@ export function install(Vue, options) {
 };
 
 export {
+    Avatar,
     Button,
     Card, CardHeader,
     Checkbox,
